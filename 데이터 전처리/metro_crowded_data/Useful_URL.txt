@@ -1,0 +1,14 @@
+https://himoonhee-coding.tistory.com/77
+
+https://blog.naver.com/codeitofficial/221684462326
+
+https://wonhwa.tistory.com/16
+
+비슷한 프로젝트@@
+
+https://github.com/Jun-Gits (자하철 혼잡도 분석 예측 모델 개발 웹 서비스) 저장된 데이터 훈련 4가지 데이터셋을 이용
+https://github.com/Lay4U/CapstOne (혼잡도 예측 앱) 판다스로우 처리 , 텐서플로 , 안드로이드
+https://github.com/noMoreTutankhamun/saveme-helltro (혼잡도 데이터 차트)
+https://github.com/uoneway/transafer (출발지와 목적지를입력하면 위험지수 및 혼잡도를 고려한 대중교통 추천 경로를 안내해주는 챗봇)
+https://github.com/kitsune03k/comfortable_metro
+https://github.com/king4k1/seoulsubway (서울 지하철 데이터 패키지)  R 언어를 이용한 혼잡도 모델
