@@ -15,8 +15,8 @@ params = {'serviceKey' : '9bi5h25Oa1d6yB2qd+7vNhE7qWLhgJvDSr4dTv6vhlZ3rvlpNTbs6N
           'returnType' : 'XML',
         'page' : page, 'perPage' : perPage}
 response = requests.get(url, params=params)
-
 data = response.text
+
 #pp = pprint.PrettyPrinter(indent=4)
 #print(pp.pprint(data))
 # XML 데이터를 파싱
