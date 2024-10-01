@@ -1,8 +1,0 @@
-https://himoonhee-coding.tistory.com/77
-
-https://blog.naver.com/codeitofficial/221684462326
-
-https://wonhwa.tistory.com/16
-
-https://wikidocs.net/127832
-#xml.etree 엘리먼트와 속성값 읽는법
