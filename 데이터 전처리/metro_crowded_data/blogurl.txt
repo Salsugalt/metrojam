@@ -1,0 +1,13 @@
+import requests
+api = [ 'uddi:70e3a3d3-0872-4828-8234-f0bca459b44f', 
+        'uddi:99771417-a036-46f1-8ad5-8edf4591c2ee', 
+        'uddi:b3803d43-ffe3-4d17-9024-fd6cfa37c284',
+]
+for i in api:
+  url = 'https://api.odcloud.kr/api/15071311/v1/' + api[i]
+  params = {'serviceKey' : '9bi5h25Oa1d6yB2qd+7vNhE7qWLhgJvDSr4dTv6vhlZ3rvlpNTbs6NZv/B+R/CvFLssD7Flh+jSDAYydOoaRfQ==', #decoding key
+          'returnType' : 'XML',
+        'page' : page, 'perPage' : perPage}
+  response = requests.get(url, params=params)
+  data[i] = response.text
+  print(data[i])
