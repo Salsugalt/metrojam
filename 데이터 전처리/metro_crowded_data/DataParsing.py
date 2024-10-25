@@ -3,18 +3,16 @@ import pandas as pd
 import requests
 
 page = 1
-perPage = 1667  # 모든 데이터의 최대 페이지
+perPage = 1667  # 모든 데이터의 최대 페이지 수
 merged_data = {}
 
 # API 목록
 api = [
-    'uddi:70e3a3d3-0872-4828-8234-f0bca459b44f',  # 2019
     'uddi:99771417-a036-46f1-8ad5-8edf4591c2ee',  # 2020
     'uddi:b3803d43-ffe3-4d17-9024-fd6cfa37c284',  # 2021
     'uddi:75461a18-17a3-42fe-9322-a51148003b69',  # 2022
     'uddi:e477f1d9-2c3a-4dc8-b147-a55584583fa2',  # 2023
     'uddi:c87b6af0-0ef7-4182-b172-fd2680a79d6f',  # 2024/03
-    'uddi:9aff0ee6-26e7-42c4-af0c-84bf31680ca9'   # 2024/06
 ]
 
 # 각 년도의 데이터를 딕셔너리에 저장
@@ -26,9 +24,13 @@ for uddi in api:
         'page': page,
         'perPage': perPage
     }
-    response = requests.get(url, params=params)
-    data = {uddi: response.text}
-    merged_data.update(data)
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()  # API 요청 에러 처리
+        data = {uddi: response.text}
+        merged_data.update(data)
+    except requests.exceptions.RequestException as e:
+        print(f"API 요청 실패: {uddi}, 에러: {e}")
 
 # XML 데이터를 순회하며 데이터프레임에 추가하는 함수
 def parsing(data, year):
@@ -65,10 +67,28 @@ def parsing(data, year):
 # 각 년도의 데이터를 데이터프레임으로 변환하고 병합
 final_df = pd.DataFrame()  # 최종 데이터프레임을 위한 빈 데이터프레임
 
-years = [2019, 2020, 2021, 2022, 2023, 2024, 2024]  # API에 해당하는 년도 목록
+years = [2020, 2021, 2022, 2023, 2024_3]  # API에 해당하는 년도 목록
 for uddi, year in zip(api, years):
     df = parsing(merged_data[uddi], year)  # 각 년도의 데이터를 파싱
     final_df = pd.concat([final_df, df], ignore_index=True)  # 데이터프레임 병합
 
-# 최종 데이터프레임 출력 (11660rows * 45columns)
-print(final_df)
+# 데이터를 '시간'과 '혼잡도'로 변형
+final_df_2 = pd.melt(final_df,
+                      id_vars=['년도', '호선', '상하구분', '역명', '역번호', '요일구분']
+                     ,var_name='시간',
+                     value_name='혼잡도')
+
+final_df_2['혼잡도'] = final_df_2['혼잡도'].fillna(0)
+
+# 기존 역명과 역번호가 있는 DataFrame을 기준으로 매핑 생성
+station_mapping = final_df_2.dropna(subset=['역명']).set_index('역번호')['역명'].to_dict()
+
+# 역번호를 기준으로 NaN 값을 역명으로 채우기
+final_df_2['역명'] = final_df_2['역명'].fillna(final_df_2['역번호'].map(station_mapping))
+
+
+# 최종 데이터프레임 출력 (454740행 * 8열) -> 일관성 없는 2019년도 데이터 추가 삭제
+print(final_df_2)
+final_df_2.to_csv('output.csv', index=False)
+#혼잡도 데이터타입 OBJECT형 형변환 필요할듯?
+#final_df_2.shape
