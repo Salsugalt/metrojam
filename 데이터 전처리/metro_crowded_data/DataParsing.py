@@ -99,9 +99,22 @@ station_mapping = final_df_2.dropna(subset=['station_name']).set_index('station_
 # station_id를 기준으로 NaN 값을 station_name으로 채우기
 final_df_2['station_name'] = final_df_2['station_name'].fillna(final_df_2['station_id'].map(station_mapping))
 
+<<<<<<< HEAD
 final_df_2.loc[final_df_2['station_id'] == '405', 'station_name'] = '전접'
 final_df_2.loc[final_df_2['station_id'] == '406', 'station_name'] = '오남'
 final_df_2.loc[final_df_2['station_id'] == '408', 'station_name'] = '별내별가람'
 final_df_2 = final_df_2.drop(final_df_2[final_df_2['station_id'].isin(['2828','9001','9002','9003','9005','9006'])].index)
 print(final_df_2)
 final_df_2.to_csv('output_check.csv', index=False)
+#9000번 역번호는 어떤번호인지 알수 없음
+#2828 8호선 828 존재하지 않음 827번이 종착역인 모란역
+#405 406 408 은 4호선 진접역 오남역 별내별가람역
+
+final_df_2.loc[final_df_2['역번호'] == '405', '역명'] = '전접'
+final_df_2.loc[final_df_2['역번호'] == '406', '역명'] = '오남'
+final_df_2.loc[final_df_2['역번호'] == '408', '역명'] = '별내별가람'
+final_df_2 = final_df_2.drop(final_df_2[final_df_2['역번호'].isin(['2828','9001','9002','9003','9005','9006'])].index)
+
+# 최종 데이터프레임 출력 (454740행 * 8열) -> 일관성 없는 2019년도 데이터 추가 삭제
+print(final_df_2)
+final_df_2.to_csv('output.csv', index=False)

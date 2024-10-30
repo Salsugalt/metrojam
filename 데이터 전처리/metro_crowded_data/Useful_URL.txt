@@ -14,4 +14,4 @@ https://github.com/kitsune03k/comfortable_metro
 https://github.com/king4k1/seoulsubway (서울 지하철 데이터 패키지)  R 언어를 이용한 혼잡도 모델
 
 
-https://ebbnflow.tistory.com/169 #케라스 텐스플로우 라이트 소개 케라스 > 텐 라> 안드로이드
+https://ebbnflow.tistory.com/169 #케라스 텐스플로우 라이트 소개 케라스 > 텐서 라이트/ 텐서 모바일> 안드로이드
