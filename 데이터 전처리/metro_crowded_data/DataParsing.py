@@ -86,9 +86,15 @@ station_mapping = final_df_2.dropna(subset=['역명']).set_index('역번호')['�
 # 역번호를 기준으로 NaN 값을 역명으로 채우기
 final_df_2['역명'] = final_df_2['역명'].fillna(final_df_2['역번호'].map(station_mapping))
 
+#9000번 역번호는 어떤번호인지 알수 없음
+#2828 8호선 828 존재하지 않음 827번이 종착역인 모란역
+#405 406 408 은 4호선 진접역 오남역 별내별가람역
+
+final_df_2.loc[final_df_2['역번호'] == '405', '역명'] = '전접'
+final_df_2.loc[final_df_2['역번호'] == '406', '역명'] = '오남'
+final_df_2.loc[final_df_2['역번호'] == '408', '역명'] = '별내별가람'
+final_df_2 = final_df_2.drop(final_df_2[final_df_2['역번호'].isin(['2828','9001','9002','9003','9005','9006'])].index)
 
 # 최종 데이터프레임 출력 (454740행 * 8열) -> 일관성 없는 2019년도 데이터 추가 삭제
 print(final_df_2)
 final_df_2.to_csv('output.csv', index=False)
-#혼잡도 데이터타입 OBJECT형 형변환 필요할듯?
-#final_df_2.shape
