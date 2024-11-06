@@ -12,3 +12,6 @@ https://github.com/noMoreTutankhamun/saveme-helltro (혼잡도 데이터 차트)
 https://github.com/uoneway/transafer (출발지와 목적지를입력하면 위험지수 및 혼잡도를 고려한 대중교통 추천 경로를 안내해주는 챗봇)
 https://github.com/kitsune03k/comfortable_metro
 https://github.com/king4k1/seoulsubway (서울 지하철 데이터 패키지)  R 언어를 이용한 혼잡도 모델
+
+
+https://ebbnflow.tistory.com/169 #케라스 텐스플로우 라이트 소개 케라스 > 텐서 라이트/ 텐서 모바일> 안드로이드
