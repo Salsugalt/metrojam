@@ -5,3 +5,15 @@ https://www.youtube.com/watch?v=28QbrkRkHlo&list=PL7ZVZgsnLwEHGS6EId3B_AnRYSCi_3
 https://ebbnflow.tistory.com/172
 
 https://www.tensorflow.org/tutorials/keras/text_classification?hl=ko
+
+승하차 데이터 사용이 필요해 보임 (승차-하차) <- 진행한 역의 따라 차이가 생기는 점 고민이 필요
+
+
+https://www.data.go.kr/data/15057802/openapi.do #역간거리 소요시간 데이터 API
+
+서울교통공사 역별 요일별 환승인원 https://www.data.go.kr/data/15044244/openapi.do
+
+서울특별시 지하철 실시간 도착정보 (일괄) https://www.data.go.kr/data/15125683/openapi.do
+
+국토교통부 지하철정보 https://www.data.go.kr/data/15098554/openapi.do
+
