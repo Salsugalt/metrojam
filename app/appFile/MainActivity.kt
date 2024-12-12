@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         // Retrofit 초기화
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:5000") // 에뮬레이터 사용 시 //http://10.0.2.2:5000 //http://172.28.0.12:5000
+            .baseUrl("http://10.0.2.2:5000") // 에뮬레이터 사용 시 //http://10.0.2.2:5000 //http://172.28.0.12:5000 //ipv4 ip 입력
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
