@@ -185,4 +185,4 @@ def get_median_congestion():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
-    
+    #안드로이드 앱에 해당 flask 실행 중인 pc가 속한 ip를 입력
