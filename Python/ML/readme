@@ -1,0 +1,1 @@
+케라스, 텐서플로우 라이트 적용하려 했으나 학습이 제대로 이루어지지 않아 scklearn xgboost 로 학습후 pkl파일로 혼잡도 predict 후 flask로 데이터 보냄
