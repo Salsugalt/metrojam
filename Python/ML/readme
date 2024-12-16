@@ -1,1 +1,32 @@
 케라스, 텐서플로우 라이트 적용하려 했으나 학습이 제대로 이루어지지 않아 scklearn xgboost 로 학습후 pkl파일로 혼잡도 predict 후 flask로 데이터 보냄
+
+get_predict_and_median_data.py
+
+Package            Version
+------------------ -----------
+blinker            1.9.0
+certifi            2024.12.14
+charset-normalizer 3.4.0
+click              8.1.7
+colorama           0.4.6
+Flask              3.1.0
+idna               3.10
+itsdangerous       2.2.0
+Jinja2             3.1.4
+joblib             1.4.2
+MarkupSafe         3.0.2
+numpy              2.2.0
+pandas             2.2.3
+pip                24.3.1
+python-dateutil    2.9.0.post0
+pytz               2024.2
+requests           2.32.3
+scikit-learn       1.5.2
+scipy              1.14.1
+setuptools         65.5.0
+six                1.17.0
+threadpoolctl      3.5.0
+tzdata             2024.2
+urllib3            2.2.3
+Werkzeug           3.1.3
+xgboost            2.1.3
