@@ -12,6 +12,7 @@ data class PredictionRequest(
 
 data class PredictionResponse(
     val median_congestion: Double?,
+    val predict_congestion: Double?,
     val error: String?
 )
 
