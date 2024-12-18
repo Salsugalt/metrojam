@@ -45,7 +45,7 @@ def get_data():
 
     # 중앙값 계산용 시간 반올림
     adjust_time = adjust_to_nearest_30_minutes(time)
-    
+    formatted_time = format_time(time)
 
     # 중앙값 계산용 데이터 필터링 (반올림된 시간 사용)
     filtered_data_m = selected_data[
@@ -59,9 +59,9 @@ def get_data():
     # 중앙값 계산
     median = float(filtered_data_m['congestion'].median()) if not filtered_data_m.empty else None
 
-    # 모델 예측용 입력 데이터 준비 (원본 시간 사용)
+    # 모델 예측용 입력 데이터 준비
     model_input = pd.DataFrame({
-        'time': [time],  # 원본 시간
+        'time': [formatted_time],  
         'day_type': [day_type],
         'direction': [direction],
         'station_name': [station_name],
