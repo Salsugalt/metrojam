@@ -1,15 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="150px"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="혼잡도 34% 만석/ 혼잡도 100% 최대수송인원 / 150% 초과수송인원" />
 
     <TextView
         android:id="@+id/result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="결과가 여기에 표시됩니다."
-        android:layout_marginTop="50dp"
-        android:textSize="18sp" />
+        android:text="중앙값 결과가 여기에 표시됨"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="방향" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupDirection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/rb_direction_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="상행" />
+
+            <RadioButton
+                android:id="@+id/rb_direction_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="하행" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="요일" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupDayType"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="평일" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="공휴일" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="지하철 노선: 1호선" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="7" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="선택된 시간: 0시 0분" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="신도림" />
+
+    <TextView
+        android:id="@+id/result_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="학습 예측결과가 표시됨"
+        android:textSize="25sp"/>
 </LinearLayout>
